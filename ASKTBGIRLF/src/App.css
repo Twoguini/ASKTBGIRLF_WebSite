@@ -43,8 +43,30 @@ table {
 }
 /* Reset Done */
 
+@keyframes RotatingBG {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(270deg);}
+}
+
+@keyframes BlurInBg {
+  from {filter: blur(0px) brightness(100%);}
+  to {filter: blur(5px) brightness(80%);}
+}
+
+@keyframes BlurOutBg {
+  from {filter: blur(5px) brightness(80%);}
+  to {filter: blur(0px) brightness(100%);}
+}
+
+@keyframes HideElement {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
 body, html {
   overflow: hidden;
+  display: flex;
+  place-content: center;
 }
 
 img.rotationg-bg {
@@ -56,14 +78,56 @@ img.rotationg-bg {
   left: -168%;
   top: -197.7%;
   transform: rotate(0deg);
+  filter: blur(0px) brightness(100%);
+}
+
+img.rotationAnimate {
   animation-name: RotatingBG;
   animation-duration: 8s;
-  animation-delay: 3s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
 
-@keyframes RotatingBG {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(270deg);}
+img.blurInAnimate {
+  animation-name: BlurInBg;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+img.blurOutAnimate {
+  animation-name: BlurOutBg;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.hideElement {
+  animation-name: HideElement;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.loginBtn {
+  border: none;
+
+  margin-top: 50vh;
+  width: 15vw;
+  height: 8vh;
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #F8EE95;
+  border: solid #F8EE95 2px;
+  border-radius: 10px;
+  transition: color 0.5s, border-color 1s, font-size 0.8s, width 0.8s, height 0.8s; 
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.loginBtn:hover {
+  color: #FFD36B;
+  border-color: #FFD36B;
+  font-size: 2.8em;
+  width: 16vw;
+  height: 9vh;
 }
