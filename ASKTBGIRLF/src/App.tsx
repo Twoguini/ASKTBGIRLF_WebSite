@@ -6,16 +6,16 @@ import './App.css'
 
 function App() {
 
-  const [ blurInBg, setBlurInBg ] = useState(false);
+  const [ blurInBg, setBlurInBg ] = useState(true);
   const [ blurOutBg, setBlurOutBg ] = useState(false);
   const [ rotatingBG, setRotatingBG ] = useState(false);
 
   return (
     <>
-      <div>
-        <img src="/assets/img/BG.png" className={'rotationg-bg ' + (blurInBg? 'blurInAnimate ' : ' ') + (blurOutBg? 'blurOutAnimate ' : ' ') + (rotatingBG? 'rotationAnimate ' : ' ')}/>
+      <img src="/assets/img/BG.png" className={'rotationg-bg ' + (blurInBg? 'blurInAnimate ' : ' ') + (blurOutBg? 'blurOutAnimate ' : ' ') + (rotatingBG? 'rotationAnimate ' : ' ')}/>
+      <div className='bodyDiv'>
         <Routes>
-          <Route path='/' element= {<Login setBlurInBg={setBlurInBg} />} />
+          <Route path='/' element= {<Login />} />
         </Routes>
       </div>
     </>

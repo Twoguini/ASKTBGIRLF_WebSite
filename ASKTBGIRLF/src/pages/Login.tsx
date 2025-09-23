@@ -1,22 +1,25 @@
 import { useState } from "react";
 
-type props = {
-  setBlurInBg: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-function Login({setBlurInBg}: props) {
+function Login() {
 
   const [ hideElement, setHideElement ] = useState(false);
+  const [ displayNone, setDisplayNone ] = useState(false);
 
   const loginFormAppearence = () => {
-    setBlurInBg(true);
     setHideElement(true);
+
+    setTimeout(() => {
+      setDisplayNone(true);
+    }, 1000);
   }
 
   return(
     <>
-      <button type="button" onClick={loginFormAppearence} className={"loginBtn " + (hideElement? "hideElement" : "")} >Entrar</button>
-      <div>
+      <div className="formDivBack">
+        <div className={"formDiv " + (hideElement? "hideElement " : "") + (displayNone? "displayNone" : "")}>
+          <h1 className={"logInTitle " + (hideElement? "hideElement" : "")}>Faça Login</h1>
+          <button type="button" onClick={loginFormAppearence} className={"loginBtn " + (hideElement? "hideElement" : "")} >Entrar</button>
+        </div>
       </div>
     </>
   )
