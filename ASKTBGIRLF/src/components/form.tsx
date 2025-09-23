@@ -15,28 +15,28 @@ export default function SecurityForm() {
         </div>
         <div>
           <h2>Qual a Flor Preferida de Maria Eduarda Alves Barbosa?</h2>
-          <input type="radio" name="flor" id="flor" />
-          <label htmlFor="">Azul Escuro</label>
-          <input type="radio" name="flor" id="flor" />
+          <input type="radio" name="flor" id="" />
+          <label htmlFor="">Margarida</label>
+          <input type="radio" name="flor" id="" />
+          <label htmlFor="">Bromélia</label>
+          <input type="radio" name="flor" id="" />
+          <label htmlFor="">Orqúidea</label>
+          <input type="radio" name="flor" id="" />
+          <label htmlFor="">Musgo</label>
+        </div>
+        <div>
+          <h2>Qual a Música que Mais Marcou o Relacionamento?</h2>
+          <input type="radio" name="color" id="" />
+          <label htmlFor="">Ipanema</label>
+          <input type="radio" name="color" id="" />
           <label htmlFor="">Amarelo Croquete</label>
-          <input type="radio" name="flor" id="flor" />
+          <input type="radio" name="color" id="" />
           <label htmlFor="">Rosa</label>
-          <input type="radio" name="flor" id="flor" />
+          <input type="radio" name="color" id="" />
           <label htmlFor="">Vermelho Carro Popular</label>
         </div>
         <div>
-          <h2>Qual a Cor Preferida da Maria Eduarda Alves Barbosa?</h2>
-          <input type="radio" name="color" id="" />
-          <label htmlFor="">Azul Escuro</label>
-          <input type="radio" name="color" id="" />
-          <label htmlFor="">Amarelo Croquete</label>
-          <input type="radio" name="color" id="" />
-          <label htmlFor="">Rosa</label>
-          <input type="radio" name="color" id="" />
-          <label htmlFor="">Vermelho Carro Popular</label>
-        </div>
-        <div>
-          <h2>Qual a Cor Preferida da Maria Eduarda Alves Barbosa?</h2>
+          <h2>Qual o Restaurante do Primeiro Date?</h2>
           <input type="radio" name="color" id="" />
           <label htmlFor="">Azul Escuro</label>
           <input type="radio" name="color" id="" />
