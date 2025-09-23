@@ -40,6 +40,10 @@ time, mark, audio, video {
   to {opacity: 0;}
 }
 
+@keyframes formFirstChangeColor {
+  to {background-color: #1F2D39;}
+}
+
 .displayNone {
   display: none !important;
 }
@@ -99,6 +103,13 @@ img.blurOutAnimate {
   animation-fill-mode: forwards;
 }
 
+.formFirstChangeColor {
+  animation-name: formFirstChangeColor;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
 div.formDivBack {
   position: absolute;
   width: 98vw;
@@ -113,8 +124,8 @@ div.formDivBack {
 
 div.formDiv {
   position: absolute;
-  width: 30vw;
-  height: 20vh;
+  width: 45vw;
+  height: 35vh;
   background-color: #1F2D39;
   display: flex;
   flex-direction: column;
@@ -148,4 +159,12 @@ div.formDiv {
   font-size: 2.8em;
   width: 16vw;
   height: 8vh;
+}
+
+h1.secFormTitle {
+  color: white;
+  font-size: 4em;
+  font-weight: 700;
+  position: absolute;
+  top: 2%;
 }
