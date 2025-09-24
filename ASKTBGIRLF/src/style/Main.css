@@ -1,8 +1,3 @@
-@keyframes RotatingBG {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(270deg);}
-}
-
 @keyframes BlurInBg {
   from {filter: blur(0px) brightness(100%);}
   to {filter: blur(5px) brightness(80%);}
@@ -11,6 +6,10 @@
 @keyframes BlurOutBg {
   from {filter: blur(5px) brightness(80%);}
   to {filter: blur(0px) brightness(100%);}
+}
+
+@keyframes RotatingBG {
+  to {transform: rotate(270deg);}
 }
 
 .displayNone {
@@ -33,18 +32,31 @@ div.bodyDiv {
 }
 
 img.rotationg-bg {
-  position: fixed;
+  /*position: fixed;
   background-color: #252F3A;
   z-index: -1;
   width: 335vw;
   height: 335vw;
   left: -168%;
   top: -197%;
-  transform: rotate(0deg);
+  transform: rotate(0deg);*/
+  width: 100%;
+  height: 100%;
   filter: blur(0px) brightness(100%);
 }
 
-img.rotationAnimate {
+.bg-wrapper {
+  position: fixed;
+  width: 335vw;
+  height: 335vw;
+  left: -168%;
+  top: -197%;
+  z-index: -1;
+  background-color: #252F3A;
+  transform: rotate(0deg);
+}
+
+.rotationAnimate {
   animation-name: RotatingBG;
   animation-duration: 8s;
   animation-timing-function: ease-in-out;

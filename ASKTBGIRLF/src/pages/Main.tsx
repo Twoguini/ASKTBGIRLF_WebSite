@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 import Login from './Login'
 import '../style/Main.css';
 
 function Main() {
+
+  const bgRef = useRef<HTMLImageElement>(null);
+  const bgWrapperRef = useRef<HTMLDivElement>(null);
 
   const [ exitFromLogin, setExitFromLogin ] = useState<boolean>(false);
 
@@ -11,21 +14,40 @@ function Main() {
   const [ blurOutBg, setBlurOutBg ] = useState(false);
   const [ rotatingBG, setRotatingBG ] = useState(false);
 
-  useEffect( () => {
-    if(exitFromLogin) {
-      setBlurInBg(false);
-      setBlurOutBg(true);
+  const setBlurOutHandler = () => {
+    setBlurInBg(false);
+    setBlurOutBg(true);
+  }
+  const setRotateHandler = () => {
+    setRotatingBG(true);
+  }
+  const setBlurInHandler = () => {
+    setBlurOutBg(false);
+    setBlurInBg(true);
+  }
 
-      setTimeout(() => {
-        setBlurOutBg(false);
-        setRotatingBG(true);
-      }, 5000);
+  useEffect( () => {
+    if(exitFromLogin && bgRef.current && bgWrapperRef.current) {
+      const bgEl = bgRef.current;
+      const wrapperBgEl = bgWrapperRef.current;
+
+      setBlurOutHandler();
+
+      const handlerRotation = () => {
+        setRotateHandler();
+
+        wrapperBgEl.addEventListener('animationend',() => { setTimeout(setBlurInHandler ,3000)}, {once: true});
+      }
+
+      bgEl.addEventListener('animationend',() => { setTimeout(handlerRotation ,5000)}, {once: true});
     }
   }, [ exitFromLogin ]);
 
   return (
     <>
-      <img src="/assets/img/BG.png" className={'rotationg-bg ' + (blurInBg? 'blurInAnimate ' : ' ') + (blurOutBg? 'blurOutAnimate ' : ' ') + (rotatingBG? 'rotationAnimate ' : ' ')}/>
+      <div ref={bgWrapperRef} className={'bg-wrapper ' + (rotatingBG? 'rotationAnimate ' : ' ')}>
+        <img ref={bgRef} src="/assets/img/BG.png" className={'rotationg-bg ' + (blurInBg? 'blurInAnimate ' : ' ') + (blurOutBg? 'blurOutAnimate ' : ' ')}/>
+      </div>
       <div className='bodyDiv'>
           {exitFromLogin? null : <Login exitLogin={() => setExitFromLogin(true)} />}
       </div>
