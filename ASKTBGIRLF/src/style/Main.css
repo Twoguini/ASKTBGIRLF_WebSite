@@ -25,21 +25,12 @@ body, html {
 div.bodyDiv {
   width: 100vw;
   height: 100vh;
-  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 img.rotationg-bg {
-  /*position: fixed;
-  background-color: #252F3A;
-  z-index: -1;
-  width: 335vw;
-  height: 335vw;
-  left: -168%;
-  top: -197%;
-  transform: rotate(0deg);*/
   width: 100%;
   height: 100%;
   filter: blur(0px) brightness(100%);
