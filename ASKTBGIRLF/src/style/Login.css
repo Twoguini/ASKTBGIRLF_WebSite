@@ -1,0 +1,148 @@
+@keyframes HideElement {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+@keyframes AppearElement {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes formFirstChangeColor {
+  to {background-color: #1F2D39;}
+}
+
+.hideElement {
+  animation-name: HideElement;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.formFirstChangeColor {
+  animation-name: formFirstChangeColor;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+div.formDivBack {
+  position: absolute;
+  width: 98vw;
+  height: 98vh;
+  background-color: #141d25;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+
+div.formDiv {
+  position: absolute;
+  width: 45vw;
+  height: 35vh;
+  background-color: #1F2D39;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+div.inputContainer {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.inputContainer label {
+  color: #FFD36B;
+  font-weight: 500;
+}
+
+.logInTitle {
+  margin-bottom: 1vh;
+  font-size: 4em;
+  color: #FFD36B;
+  font-weight: 700;
+}
+
+.loginBtn {
+  width: 15vw;
+  height: 7vh;
+  margin-top: 3vh;
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #F8EE95;
+  border: solid #F8EE95 2px;
+  border-radius: 10px;
+  transition: color 0.5s, border-color 1s, font-size 0.8s, width 0.8s, height 0.8s; 
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.loginBtn:hover {
+  color: #FFD36B;
+  border-color: #FFD36B;
+  font-size: 2.8em;
+  width: 16vw;
+  height: 8vh;
+}
+
+h1.secFormTitle {
+  color: #FFD36B;
+  font-size: 4em;
+  font-weight: 700;
+  position: absolute;
+  top: 25vh;
+}
+
+div.welcomeMsg {
+  animation-name: AppearElement;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+
+  text-align: center;
+}
+
+div.welcomeMsg h1 {
+  color: #FFD36B;
+  font-size: 4em;
+  font-weight: 800;
+}
+
+div.welcomeMsg h2 {
+  color: #FFD36B;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+div.welcomeMsg h3 {
+  color: #FFD36B;
+  text-align: right;
+  font-size: 1em;
+  margin-top: 10vh;
+}
+
+.continueBtn {
+  width: 15vw;
+  height: 7vh;
+  margin-top: 3vh;
+  font-size: 2em;
+  font-weight: 600;
+  color: #F8EE95;
+  border: solid #F8EE95 2px;
+  border-radius: 10px;
+  transition: color 0.5s, border-color 1s, font-size 0.8s, width 0.8s, height 0.8s; 
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.continueBtn:hover {
+  color: #FFD36B;
+  border-color: #FFD36B;
+  font-size: 2.5em;
+  width: 16vw;
+  height: 8vh;
+}

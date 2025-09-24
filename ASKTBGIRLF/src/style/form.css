@@ -1,0 +1,32 @@
+.activeSecForm {
+  display: flex !important;
+}
+
+.secFormInptTitleDiv {
+  display: none;
+  width: 50vw;
+  height: 30vh;
+  flex-direction: column;
+  background-color: #FFD36B;
+  border-radius: 25px;
+  justify-content: center;
+  margin: 2vw;
+}
+
+h2.secFormInptTitle {
+  color: #1F2D39;
+  font-size: 2em;
+  font-weight: 800;
+  word-break: normal;
+  text-align: center;
+}
+
+.labelInptContainer {
+  margin-inline: 2vw;
+}
+
+label {
+  font-size: 1.2em;
+  color: #1F2D39;
+  font-weight: 600;
+}
