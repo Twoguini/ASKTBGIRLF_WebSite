@@ -1,23 +1,45 @@
-import React, { useEffect } from "react";
-import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
+import { useRive, useStateMachineInput } from "@rive-app/react-webgl2";
+import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
 
-interface Props {
-  width?: number;
-  height?: number;
+export type FlowerRef = {
+  triggerEntry: () => void;
+  triggerClick: () => void;
+  setCheck: (value: number) => void;
+  isReady: () => boolean;
 }
 
-export default function FlowerAnimations({ width = 2560, height = 1440 }:Props) {
+ const FlowerAnimations = forwardRef<FlowerRef>((props, ref) => {
 
-  const {  rive, RiveComponent } = useRive({
-    src: '/assets/rive/welcome_animation.riv',
-    stateMachines:"Flower",
+  const [ ready, setReady ] = useState(false);
+
+  const { rive, RiveComponent } = useRive({
+    src:'/assets/rive/welcome_animation.riv',
+    stateMachines: 'Flower',
     autoplay: true,
   });
 
+  const startFlowerEntry = useStateMachineInput(rive, 'Flower', "StartFlowerEntry");
+  const ClickAnimation = useStateMachineInput(rive, 'Flower', "ClickAnimation");
+  const Checks = useStateMachineInput(rive, 'Flower', "Checks");
+
+  useEffect(() => {
+    if(rive && startFlowerEntry) {
+      setReady(true);
+    }
+  }, [rive, startFlowerEntry]);
+
+  useImperativeHandle( ref, () => ({
+    triggerEntry: () => startFlowerEntry?.fire(),
+    triggerClick: () => ClickAnimation?.fire(),
+    setCheck: (value: number) => {if(Checks) Checks.value = value;},
+    isReady: () => ready,
+  }));
+
   return(
-    <div style={{ width, height }}>
-      <RiveComponent style={{ width: "100%", height: "100%" }} />
+    <div className="sideAnimationContainer">
+      <RiveComponent />
     </div>
   );
+});
 
-}
+export default FlowerAnimations;

@@ -20,7 +20,7 @@ export default function SecurityForm({ hideElement, onSecFormFinished } : secFor
 
   return(
     <>
-      <div style={hideElement? {} : {display: "none"}}>
+      <div style={hideElement? {} : {opacity: 0, display: "none"}} className={ hideElement? "" : "appearForm" }>
         <div className={'secFormInptTitleDiv ' + (nextForm == 0? 'activeSecForm' : '')}>
           <h2 className='secFormInptTitle'>Qual a Cor Preferida de Maria Eduarda Alves Barbosa?</h2>
           <div className='labelInptContainer'>
