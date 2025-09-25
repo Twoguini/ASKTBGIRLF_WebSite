@@ -8,7 +8,7 @@ export type FlowerRef = {
   isReady: () => boolean;
 }
 
- const FlowerAnimations = forwardRef<FlowerRef>((props, ref) => {
+ const FlowerAnimations = forwardRef<FlowerRef>((_props, ref) => {
 
   const [ ready, setReady ] = useState(false);
 

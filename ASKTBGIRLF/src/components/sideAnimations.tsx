@@ -7,7 +7,7 @@ export type SideRef = {
   isReady: () => boolean;
 }
 
-const Side = forwardRef<SideRef>((props, ref) => {
+const Side = forwardRef<SideRef>((_props, ref) => {
 
   const [ ready, setReady ] = useState(false);
 

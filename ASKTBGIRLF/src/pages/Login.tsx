@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SecurityForm from "../components/form";
 
 import '../style/Login.css';
